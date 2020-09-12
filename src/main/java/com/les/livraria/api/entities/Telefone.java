@@ -19,8 +19,8 @@ public class Telefone implements Serializable{
 	private static final long serialVersionUID = -8314147146384703792L;
 	
 	private Long id;
-	private Integer ddd;
-	private Integer numero;
+	private String ddd;
+	private String numero;
 	private Cliente cliente;
 
 	public Telefone() {
@@ -37,20 +37,20 @@ public class Telefone implements Serializable{
 	}
 
 	@Column(name = "ddd", nullable = false)
-	public Integer getDdd() {
+	public String getDdd() {
 		return ddd;
 	}
 
-	public void setDdd(Integer ddd) {
+	public void setDdd(String ddd) {
 		this.ddd = ddd;
 	}
 
 	@Column(name = "numero", nullable = false)
-	public Integer getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(Integer numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	
