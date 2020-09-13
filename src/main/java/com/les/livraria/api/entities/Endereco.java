@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -146,6 +148,7 @@ public class Endereco implements Serializable{
 		this.observacao = observacao;
 	}
 
+	@Enumerated(EnumType.STRING)
 	@Column(name = "tipo_endereco", nullable = false)
 	public TipoEndereco getTipoEndereco() {
 		return tipoEndereco;

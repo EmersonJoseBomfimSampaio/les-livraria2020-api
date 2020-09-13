@@ -7,12 +7,16 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.les.livraria.api.enums.Status;
 
 @Entity
 @Table(name = "cliente")
@@ -30,6 +34,7 @@ public class Cliente implements Serializable{
 	private List<Telefone> telefones;
 	private List<Endereco> Enderecos;
 	private List<Cartao> cartoes;
+	private Status status;
 	
 	public Cliente() {
 	}
@@ -122,6 +127,16 @@ public class Cliente implements Serializable{
 
 	public void setCartoes(List<Cartao> cartoes) {
 		this.cartoes = cartoes;
+	}
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "perfil", nullable = false)
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 	@Override
